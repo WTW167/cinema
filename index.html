@@ -3,17 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <title>Portfolio Cinema</title>
   <meta name="description" content="<%= description %>" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="./js/script.js"></script>
   <link rel="icon" href="./assets/images/fav.jpg" />
-
   <title>
     <%= title %>
   </title>
 </head>
 
+<body>
 <header class="l-header">
   <div class="p-header_wrap">
-    <img class="p-header_logo" src="./Github_cinema/assets/images/logo.png" alt="CONVICTION">
+    <a href="./index.html">
+      <img src="p-header_logo" src="./Github_cinema/assets/images/logo.png" alt="CONVICTION">
+    </a>
+    <button class="p-header_menuButton"></button>
+    <ul class="c-header_siteMenu">
+      <li class="c-menu">
+        <a href="./index.html">
+          <div class="menu_item">
+            <div class="c-menu_label1">劇場一覧</div>
+            <div class="c-menu_label2">THEATERS</div>
+          </div>
+        </a>
+      </li>
+  
+    </div>
   </div>
 </header>
+</body>
