@@ -3,54 +3,56 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio Cinema</title>
-  <meta name="description" content="<%= description %>" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <script src="./js/script.js"></script>
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>" />
+  <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="icon" href="./assets/images/fav.jpg" />
-  <title>
-    <%= title %>
-  </title>
+  <script src="./assets/js/script.js" defer></script>
 </head>
 
 <body>
 <header class="l-header">
-  <div class="p-header_wrap">
-    <a href="./index.html">
-      <img src="p-header_logo" src="./Github_cinema/assets/images/logo.png" alt="CONVICTION">
-    </a>
-    <button class="p-header_menuButton"></button>
-    <nav class="c-header_siteMenu">
-    <ul class="c-header_Menu">
-      <li class="c-menu">
-        <a href="./index.html">
-          <div class="menu_item">
-            <div class="c-menu_label1">劇場一覧</div>
-            <div class="c-menu_label2">THEATERS</div>
-          </div>
-        </a>
-      </li>
-      <li class="c-menu">
-        <a href="./index.html">
-          <div class="menu_item">
-            <div class="c-menu_label1">作品一覧</div>
-            <div class="c-menu_label2">MOVIE</div>
-          </div>
-        </a>
-      </li>
-      <li class="c-menu">
-        <a href="./index.html">
-          <div class="menu_item">
-            <div class="c-menu_label1">よくあるご質問</div>
-            <div class="c-menu_label2">Q&A</div>
-          </div>
-        </a>
-      </li>
-    </ul>
+  <div class="p-header__wrap">
+
+    <a href="./index.html" class="c-logo"></a>
+    <button class="p-header__menuButton"></button>
+
+    <nav class="p-header__siteMenu">
+      <ul class="p-header__menuList">
+        <li class="p-header__menuItem">
+          <a href="./index.html" class="c-link">
+            <div class="p-menuItem">
+              <div class="p-menuItem__label--primary">劇場一覧</div>
+              <div class="p-menuItem__label--secondary">THEATERS</div>
+            </div>
+          </a>
+        </li>
+
+        <li class="p-header__menuitem">
+          <a href="./index.html" class="c-link">
+            <div class="p-menuItem">
+              <div class="p-menuItem__label--primary">作品一覧</div>
+              <div class="p-menuItem__label--secondary">MOVIE</div>
+            </div>
+          </a>
+        </li>
+
+        <li class="p-header__menuitem">
+          <a href="./index.html" class="c-link">
+            <div class="p-menuItem">
+              <div class="p-menuItem__label--primary">よくあるご質問</div>
+              <div class="p-menuItem__label--secondary">Q&A</div>
+            </div>
+          </a>
+        </li>
+      </ul>
     </nav>
-    <div class="p-header_QRcode">
-      <a href="./index.html" class="p-QRcode_link">QRコード発行</a>
+
+    <div class="p-header__qrCode">
+      <a href="./index.html" class="p-header__link">QRコード発行</a>
     </div>
+
   </div>
 </header>
 </body>
