@@ -24,4 +24,6 @@ a {
 .p-header__wrap {
   height: 90px;
   width: 900px;
+  display: flex;
+  align-items: center;
 }
