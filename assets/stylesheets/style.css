@@ -52,3 +52,11 @@ a {
   font-size: 10px;
   text-align: center;
 }
+
+.p-qrCode {
+  background-color: #19a50d;
+  font: #fff;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 14px 12px;
+}
