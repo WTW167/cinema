@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+a {
+  color: inherit;
+  text-emphasis: none;
+}
+
 *,
 ::before,
 ::after {
