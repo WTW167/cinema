@@ -40,10 +40,10 @@ a {
 }
 
 .p-header__menuItem {
-  margin-left: 30px;
+  margin-left: 22px;
 }
 
-.p-header__menuItem:last-child {
+.p-header__menuItem:nth-child(3) {
   margin-right: 22px;
 }
 
