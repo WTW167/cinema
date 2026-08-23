@@ -8,7 +8,7 @@
 }
 
 .l-header {
-  background-color: #000;
+  background-color:#354756;
 }
 
 .p-header__wrap {
@@ -16,4 +16,9 @@
   width: 900px;
   display: flex;
   align-items: center;
+}
+
+.p-header__logo {
+  height: 42px;
+  width: 220px;
 }
