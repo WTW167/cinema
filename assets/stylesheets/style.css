@@ -43,6 +43,10 @@ a {
   margin-left: 30px;
 }
 
+.p-header__menuItem:last-child {
+  margin-right: 22px;
+}
+
 .p-menuItem__label--primary {
   font-size: 16px;
   font-weight: 700;
@@ -60,7 +64,7 @@ a {
 .p-qrCode__label {
   display: block;
   background-color: #19a50d;
-  font: #fff;
+  font:#FFFFFF;
   font-size: 16px;
   border-radius: 10px;
   padding: 14px 12px;
