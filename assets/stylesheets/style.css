@@ -17,12 +17,15 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content:space-between;
 }
 
 .p-header__logo {
   height: 42px;
   width: 220px;
+}
+
+.p-header__siteMenu {
+  margin: 0 0 0 auto;
 }
 
 .p-header__menuList {
