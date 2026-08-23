@@ -54,6 +54,7 @@ a {
 }
 
 .p-qrCode {
+  display: block;
   background-color: #19a50d;
   font: #fff;
   font-size: 16px;
