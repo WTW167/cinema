@@ -54,6 +54,10 @@ a {
 }
 
 .p-qrCode {
+  display: flex;
+}
+
+.p-qrCode__label {
   display: block;
   background-color: #19a50d;
   font: #fff;
