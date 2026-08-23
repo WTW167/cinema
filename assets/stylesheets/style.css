@@ -35,10 +35,10 @@
   margin-left: 30px;
 }
 
-.p_menuItem__label--primary {
+.p-menuItem__label--primary {
   font-size: 16px;
 }
 
-.p_menuItem__label--primary {
+.p-menuItem__label--secondary {
   font-size: 10px;
 }
