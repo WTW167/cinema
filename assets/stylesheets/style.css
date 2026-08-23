@@ -31,6 +31,10 @@
   color: #FFFFFF;
 }
 
+.p-header__menuItem {
+  margin-left: 30px;
+}
+
 .p_menuItem__label--primary {
   font-size: 16px;
 }
