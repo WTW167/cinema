@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-a {
-  color: inherit;
-  text-emphasis: none;
-}
-
 *,
 ::before,
 ::after {
@@ -37,11 +32,18 @@ a {
   list-style: none;
   display: flex;
   color: #FFFFFF;
-  text-emphasis: none;
 }
 
 .p-header__menuItem {
   margin-left: 22px;
+}
+
+.c-link {
+  text-decoration: none;
+}
+
+.c-link:hover .p-navItem {
+  background-color: #354756;
 }
 
 .p-header__menuItem:nth-child(3) {
