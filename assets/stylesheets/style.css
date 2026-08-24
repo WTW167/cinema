@@ -38,14 +38,6 @@
   margin-left: 22px;
 }
 
-.c-link {
-  text-decoration: none;
-}
-
-.c-link:hover .p-navItem {
-  background-color: #354756;
-}
-
 .p-header__menuItem:nth-child(3) {
   margin-right: 22px;
 }
@@ -72,4 +64,12 @@
   border-radius: 10px;
   padding: 14px 12px;
   text-emphasis: none;
+}
+
+.c-link {
+  text-decoration: none;
+}
+
+.c-link:hover .p-navItem {
+  background-color: #354756;
 }
