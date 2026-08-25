@@ -92,11 +92,11 @@
 .p-main__navItem {
   flex-grow: 1;
   text-align: center;
+  position: relative;
 }
 
 .p-navItem {
   width: 100%; 
-  position: relative;
 }
 
 .p-navItem:after {
@@ -116,4 +116,9 @@
 .p-navItem__label--secondary {
   font-size: 10px;
   text-align: center;
+}
+
+.l-footer {
+  background-color: #1D1D1F;
+  padding: 30px 0;
 }
