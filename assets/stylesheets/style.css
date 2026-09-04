@@ -119,6 +119,184 @@
   text-align: center;
 }
 
+.p-main__slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.p-main__slides {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth; 
+}
+
+.p-main__slides::-webkit-scrollbar {
+  display: none;
+}
+
+.c-slide {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.c-slide.active {
+  opacity: 1;
+}
+
+.c-slide img:hover {
+  opacity: 0.8;
+  transition: opacity 0.1s ease;
+}
+
+.p-main__dots {
+  text-align: center;
+}
+
+.c-dot {
+  display: inline-block;
+  width: 50px;
+  height: 6px;
+  background: #ccc;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+}
+
+.c-dot:hover {
+  background: #666;
+}
+
+.c-dot.active {
+  background: #007bff;
+}
+
+.p-main__showTimesWrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.p-showTimesguide__example {
+  color: #F06666;
+}
+
+
+.p-main__dateCarousel__arrow {
+  position: relative;
+  width: 30px;
+  background-color: #0d3fa5;
+  border-radius: 10px;
+}
+
+.p-main__carouselArrow--prev,
+.p-main__carouselArrow--nxet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.p-main__carouselArrow--prev::before,
+.p-main__carouselArrow--prev::after {
+  content: "";
+  position: absolute;  
+  width: 8px;
+  height: 2px;
+  background-color: #0d3fa5;
+  right: 4px;  
+}
+
+.p-main__carouselArrow--prev::after {
+  top: 10px;
+  transform: rotate(45deg);
+  bottom: calc(40% - 2.5px);}
+
+.p-main__carouselArrow--prev::before {
+  top: 10px;
+  transform: rotate(-45deg);
+  bottom: calc(40% - 2.5px);
+}
+
+.p-main__carouselArrow--nxet::before,
+.p-main__carouselArrow--nxet:after {
+  content: "";
+  position: absolute;  
+  width: 8px;
+  height: 2px;
+  background-color: #0d3fa5;
+  left: 4px;  
+}
+
+.p-main__carouselArrow--nxet::after {
+  top: 10px;
+  transform: rotate(-45deg);
+  bottom: calc(40% - 2.5px);
+}
+
+.p-main__dateCarousel {
+  display: flex;
+  gap: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.p-main__dateCarousel--swiper {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 8px 0;
+}
+
+.p-main__datesWarp {
+  width: max-content;
+  display: flex;
+}
+
+.p-main__dates {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+}
+
+.p-dateItem {
+  flex-shrink: 0;
+  width: 145px;
+}
+
+.p-dateItem__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 8px;
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 #c7c7c7;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.p-dateItem__day {
+  font-size: 30px;
+}
+
+.p-dateItem__week {
+  font-size: 20px;
+}
+
+.p-main__carouselArrow--nxet::before {
+  top: 10px;
+  transform: rotate(45deg);
+  bottom: calc(40% - 2.5px);
+}
+
+
 .l-footer {
   background-color: #1D1D1F;
   padding: 30px 0;
