@@ -20,8 +20,15 @@
 }
 
 .p-header__logo {
-  height: 42px;
+  display: block;
   width: 220px;
+  height: 42px;
+}
+
+.p-header__logo img {
+  width: 220px;
+  height: 42px;
+  object-fit: contain;
 }
 
 .p-header__siteMenu {
@@ -42,6 +49,10 @@
   margin-right: 22px;
 }
 
+.p-menuItem:hover {
+  opacity: 0.6;
+}
+
 .p-menuItem__label--primary {
   font-size: 16px;
   font-weight: 700;
@@ -54,6 +65,10 @@
 
 .p-qrCode {
   display: flex;
+}
+
+.p-qrCode:hover {
+  opacity: 0.6;
 }
 
 .p-qrCode__label {
@@ -70,6 +85,10 @@
   color: inherit;
 }
 
+.l-main {
+  background-color:#f0f3f5;
+}
+
 .p-main__backGround {
   background-color: #55352C;
 }
@@ -78,11 +97,29 @@
   max-width: 1100px;
   height: 80px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
+
+.p-main__logo {
+  display: flex;
+}
+
+.p-main__logo img {
+  width: 220px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.p-main__nav {
+  margin: 0 auto;
+}
+
 
 .p-main__navMenu {
   list-style: none;
   display: flex;
+  align-items:center;
   width: 100%; 
   height: 80px;
   padding-left: 0;
@@ -91,13 +128,15 @@
 }
 
 .p-main__navItem {
-  flex-grow: 1;
+  flex: 1;
   text-align: center;
   position: relative;
 }
 
 .p-navItem {
-  width: 100%; 
+  padding: 22px 26px;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .p-navItem:after {
@@ -182,6 +221,54 @@
   color: #F06666;
 }
 
+.p-main__opening {
+  max-width: 1100px;
+  margin: 20px auto 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.p-showTimestitle {
+  margin: 30px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.p-showTimesguide {
+  margin-bottom: 30px;
+}
+
+.p-showTimesguide--break {
+  word-break: break-all;
+}
+
+.p-showTimesguide__text {
+  margin: 0 0 5px;
+}
+
+.p-showTimesguide__text:nth-child(3) {
+  margin-bottom: 25px;
+}
+
+.p-showTimesguide__text:nth-child(6) {
+  margin-bottom: 25px;
+}
+
+.p-showTimesguide__text:last-child {
+  margin-bottom: 0;
+}
+
+.p-main__openingWrap {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+}
+
+.p-main__openingTitle {
+  min-width: 110px;
+  font-size: 20px;
+  font-weight: 700;
+}
 
 .p-main__dateCarousel__arrow {
   position: relative;
