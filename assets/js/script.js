@@ -2,46 +2,66 @@ const slideContainer = document.querySelector('.p-main__slides');
 let slides = document.querySelectorAll('.c-slide');
 const dots = document.querySelectorAll('.c-dot');
 
-// 無限ループ用クローン作成
+
+// ==============================
+// クローンを作成
+// ==============================
+
 const firstClone = slides[0].cloneNode(true);
 const lastClone = slides[slides.length - 1].cloneNode(true);
 
-firstClone.id = "clone-first";
-lastClone.id = "clone-last";
+firstClone.id = 'clone-first';
+lastClone.id = 'clone-last';
 
 slideContainer.appendChild(firstClone);
 slideContainer.insertBefore(lastClone, slides[0]);
 
-// クローン込みで再取得
 slides = document.querySelectorAll('.c-slide');
 
-// 実スライドは index=1 から始まる
+
+// ==============================
+// 現在のスライド
+// ==============================
+
+// 0 = clone-slide10
+// 1 = slide1
+// 2 = slide2
+// ...
+// 10 = slide10
+// 11 = clone-slide1
+
 let index = 1;
-
-// 初期位置を slide1 に合わせる
-function setInitialPosition() {
-  const firstRealSlide = slides[index];
-  const centerPos =
-    firstRealSlide.offsetLeft - (slideContainer.offsetWidth / 2) + (firstRealSlide.offsetWidth / 2);
-  slideContainer.scrollLeft = centerPos;
-}
-setInitialPosition();
+let isMoving = false;
 
 
-// 中央にスクロールする関数
-function scrollToSlide(i) {
+// ==============================
+// スライドを中央に移動
+// ==============================
+
+function moveToSlide(i, animate = true) {
   const target = slides[i];
-  const centerPos =
-    target.offsetLeft - (slideContainer.offsetWidth / 2) + (target.offsetWidth / 2);
 
-  slideContainer.scrollTo({
-    left: centerPos,
-    behavior: "smooth",
-  });
+  if (!target) return;
+
+  const containerCenter = slideContainer.parentElement.offsetWidth / 2;
+  const slideCenter = target.offsetLeft + target.offsetWidth / 2;
+
+  const moveX = containerCenter - slideCenter;
+
+  if (animate) {
+    slideContainer.style.transition = 'transform 0.5s ease';
+  } else {
+    slideContainer.style.transition = 'none';
+  }
+
+  slideContainer.style.transform = `translateX(${moveX}px)`;
 }
 
 
-// active クラス更新
+// ==============================
+// activeを更新
+// ==============================
+
 function updateActive(i) {
   slides.forEach((slide, idx) => {
     slide.classList.toggle('active', idx === i);
@@ -53,52 +73,78 @@ function updateActive(i) {
 }
 
 
+// ==============================
+// 初期位置
+// ==============================
+
+moveToSlide(index, false);
+updateActive(index);
+
+
+// ==============================
 // ドットクリック
+// ==============================
+
 dots.forEach((dot, i) => {
-  dot.addEventListener("click", (e) => {
+  dot.addEventListener('click', (e) => {
     e.preventDefault();
+
+    if (isMoving) return;
+
     index = i + 1;
-    scrollToSlide(index);
+
+    moveToSlide(index, true);
     updateActive(index);
   });
 });
 
 
-// 自動スクロール（右方向）
+// ==============================
+// 自動スライド
+// ==============================
+
 setInterval(() => {
+
+  if (isMoving) return;
+
+  isMoving = true;
+
   index++;
-  scrollToSlide(index);
+
+  moveToSlide(index, true);
   updateActive(index);
+
 }, 3000);
 
 
-// 無限ループ補正（右方向に自然に流れるように調整）
-slideContainer.addEventListener("scroll", () => {
-  const maxScroll = slideContainer.scrollWidth - slideContainer.offsetWidth;
+// ==============================
+// アニメーション終了後の処理
+// ==============================
 
-  // 左端（clone-last）→ slide10 に瞬間移動
-  if (slideContainer.scrollLeft <= 0) {
-    index = slides.length - 2; // slide10
-    slideContainer.scrollLeft =
-      slides[index].offsetLeft -
-      (slideContainer.offsetWidth / 2) +
-      (slides[index].offsetWidth / 2);
+slideContainer.addEventListener('transitionend', (e) => {
 
+  if (e.propertyName !== 'transform') return;
+
+
+  // clone-slide1まで到達
+  if (index === slides.length - 1) {
+
+    index = 1;
+
+    moveToSlide(index, false);
     updateActive(index);
   }
 
-  // 右端（clone-first）→ slide1 に瞬間移動（右方向ループの要）
-  if (slideContainer.scrollLeft >= maxScroll) {
-    index = 1; // slide1
 
-    // ★瞬間ジャンプ（ユーザーは見えない）
-    slideContainer.scrollLeft =
-      slides[index].offsetLeft -
-      (slideContainer.offsetWidth / 2) +
-      (slides[index].offsetWidth / 2);
+  // clone-slide10まで到達
+  if (index === 0) {
 
+    index = slides.length - 2;
+
+    moveToSlide(index, false);
     updateActive(index);
-
-    // ★次の自動スクロールで右方向に slide2 へ進む
   }
+
+  isMoving = false;
+
 });
