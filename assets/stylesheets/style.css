@@ -300,12 +300,12 @@
 }
 
 .p-main__carouselArrow--prev::after {
-  top: 10px;
+  top: 9px;
   transform: rotate(45deg);
   bottom: calc(40% - 2.5px);}
 
 .p-main__carouselArrow--prev::before {
-  top: 10px;
+  top: 5px;
   transform: rotate(-45deg);
   bottom: calc(40% - 2.5px);
 }
@@ -321,14 +321,20 @@
 }
 
 .p-main__carouselArrow--nxet::after {
-  top: 10px;
+  top: 9px;
   transform: rotate(-45deg);
+  bottom: calc(40% - 2.5px);
+}
+
+.p-main__carouselArrow--nxet::before {
+  top: 5px;
+  transform: rotate(45deg);
   bottom: calc(40% - 2.5px);
 }
 
 .p-main__dateCarousel {
   display: flex;
-  gap: 10px;
+  column-gap: 10px;
   background-color: #fff;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -344,8 +350,13 @@
 }
 
 .p-main__datesWarp {
-  width: max-content;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
   display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
 }
 
 .p-main__dates {
@@ -356,14 +367,16 @@
 
 .p-dateItem {
   flex-shrink: 0;
-  width: 145px;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
 }
 
 .p-dateItem__box {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 8px;
+  padding: 18px 8px 30px;
   color: #000;
   text-decoration: none;
   border: 1px solid #ececec;
@@ -381,12 +394,10 @@
   font-size: 20px;
 }
 
-.p-main__carouselArrow--nxet::before {
-  top: 10px;
-  transform: rotate(45deg);
-  bottom: calc(40% - 2.5px);
+.p-main__scheduleTitle {
+  font-size: 20px;
+  font-weight: 700;
 }
-
 
 .l-footer {
   background-color: #1D1D1F;
