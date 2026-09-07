@@ -273,12 +273,14 @@
 .p-main__dateCarousel__arrow {
   position: relative;
   width: 30px;
+  min-width: 30px;
+  flex-shrink: 0;
   background-color: #0d3fa5;
   border-radius: 10px;
 }
 
 .p-main__carouselArrow--prev,
-.p-main__carouselArrow--nxet {
+.p-main__carouselArrow--next {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -310,8 +312,8 @@
   bottom: calc(40% - 2.5px);
 }
 
-.p-main__carouselArrow--nxet::before,
-.p-main__carouselArrow--nxet:after {
+.p-main__carouselArrow--next::before,
+.p-main__carouselArrow--next:after {
   content: "";
   position: absolute;  
   width: 8px;
@@ -320,13 +322,13 @@
   left: 4px;  
 }
 
-.p-main__carouselArrow--nxet::after {
+.p-main__carouselArrow--next::after {
   top: 9px;
   transform: rotate(-45deg);
   bottom: calc(40% - 2.5px);
 }
 
-.p-main__carouselArrow--nxet::before {
+.p-main__carouselArrow--next::before {
   top: 5px;
   transform: rotate(45deg);
   bottom: calc(40% - 2.5px);
@@ -334,7 +336,9 @@
 
 .p-main__dateCarousel {
   display: flex;
+  align-items: stretch;
   column-gap: 10px;
+  width: 100%;
   background-color: #fff;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -343,20 +347,17 @@
 .p-main__dateCarousel--swiper {
   position: relative;
   flex: 1;
+  min-width: 0;
   overflow: hidden;
   background-color: #fff;
   border-radius: 10px;
   padding: 8px 0;
+  box-sizing: border-box;
 }
 
 .p-main__datesWarp {
-  position: relative;
   width: 100%;
-  height: 100%;
-  z-index: 1;
-  display: flex;
-  transition-property: transform;
-  box-sizing: content-box;
+  overflow-x: hidden;
 }
 
 .p-main__dates {
@@ -367,9 +368,7 @@
 
 .p-dateItem {
   flex-shrink: 0;
-  height: 100%;
-  position: relative;
-  transition-property: transform;
+  width: 145px;
 }
 
 .p-dateItem__box {
