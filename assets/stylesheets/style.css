@@ -398,6 +398,28 @@
   font-weight: 700;
 }
 
+.p-main__scheduleWrap {
+  padding: 15px 0;
+  display: flex;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.p-main__scheduleWrap label {
+  display: block;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+
+.p-main__tabTitle {
+  color: #000;
+  border-bottom: 3px solid #0d3fa5;
+  padding-bottom: 10px;
+}
+
 .l-footer {
   background-color: #1D1D1F;
   padding: 30px 0;
