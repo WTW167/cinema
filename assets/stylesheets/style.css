@@ -413,11 +413,77 @@
   box-sizing: border-box;
 }
 
-
 .p-main__tabTitle {
   color: #000;
   border-bottom: 3px solid #0d3fa5;
   padding-bottom: 10px;
+}
+
+.p-main__tabContent {
+  display: block;
+  margin-top: 30px;
+}
+
+.p-main__tabContent--wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;  
+}
+
+.p-main__contentItem {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.p-main__contentTitle {
+  margin-bottom: 20px;
+}
+
+.p-tabContent__title {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.p-tabContent__description {
+  margin-left: 16px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.p-main__contentSchedule {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.p-main__scheduleBox {
+  padding: 14px;
+  background-color: #0d3fa5;
+  text-align: center;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.p-main__scheduleBox__time {
+  font-size: 20px;
+}
+
+.p-main__scheduleBox__info {
+  font-size: 12px;
+}
+
+.p-main__scheduleBox__purchase {
+  font-size: 20px;
+}
+
+.p-main__screeningTime {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
 }
 
 .l-footer {
