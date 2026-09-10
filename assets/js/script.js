@@ -124,3 +124,22 @@ next.addEventListener('click', () => {
   index++;
   scrollToCenter(index);
 });
+
+const tabs = document.querySelectorAll('.tab');
+const panels = document.querySelectorAll('.tab-panel');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const target = tab.dataset.tab;
+
+    panels.forEach(panel => {
+      panel.classList.remove('active');
+    });
+
+    document.getElementById(`tab-${target}`).classList.add('active');
+  });
+});
