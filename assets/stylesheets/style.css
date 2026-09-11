@@ -422,7 +422,6 @@
 }
 
 .tab-panel {
-  opacity: 0;
   transform: translateY(10px);
   pointer-events: none;
   transition: opacity .3s ease, transform .3s ease;
