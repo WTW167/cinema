@@ -630,6 +630,33 @@
   transform: rotate(45deg);  
 }
 
+.p-main__snsContainer {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 120px;
+}
+
+.p-main__snsContainer__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.p-main__snsContainer__wrap h2 {
+  margin: 0 auto 0 0;
+}
+
+.p-Item__image {
+  margin-right: 0;
+}
+
+.c-icon {
+  width: 26px;
+}
+
 .l-footer {
   background-color: #1D1D1F;
   padding: 30px 0;
