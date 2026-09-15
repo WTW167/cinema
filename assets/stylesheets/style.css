@@ -657,11 +657,49 @@
   width: 26px;
 }
 
+.p-main__access {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.p-main__access h1 {
+  padding: 40px 0;
+}
+
+.p-main__access__wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.p-main__accessDetail {
+  margin-bottom: 40px;
+}
+
+.p-accessDetail__row {
+  display: flex;
+  padding: 20px;
+  font-size: 14px;
+  background-color: #f7fafc;
+}
+
+.p-accessDetail__row:nth-child(2) {
+  background-color: #fff;
+}
+
+.p-accessDetail__label {
+  width: 160px;
+  font-weight: 700;
+}
+
 .l-footer {
   background-color: #1D1D1F;
   padding: 30px 0;
   color: #FFFFFF;
   font-size: 12px;
+}
+
+.access .l-footer {
+  margin-top: 120px;
 }
 
 .p-footer__menu {
