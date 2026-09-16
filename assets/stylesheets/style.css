@@ -133,6 +133,11 @@
   position: relative;
 }
 
+.p-main__nav.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
 .p-navItem {
   padding: 22px 26px;
   white-space: nowrap;
