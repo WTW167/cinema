@@ -128,29 +128,40 @@
 }
 
 .p-main__navItem {
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+}
+
+.p-main__navItem {
   flex: 1;
   text-align: center;
   position: relative;
 }
 
-.p-main__nav.active {
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
-
 .p-navItem {
+  display: block;
   padding: 22px 26px;
   white-space: nowrap;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
-.p-navItem:after {
-  content: "";
+.p-navItem.active {
+  background-color: #2f1d18;
+}
+
+.p-navItem--underBar {
   position: absolute;
   bottom: 0;
   left: 15%;
   width: 70%;
   height: 4px;
+  background-color: #fff;
+}
+
+.p-navItem__label {
+  color: #fff;
 }
 
 .p-navItem__label--primary {

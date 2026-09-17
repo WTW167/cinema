@@ -143,14 +143,3 @@ tabs.forEach(tab => {
     document.getElementById(`tab-${target}`).classList.add('active');
   });
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll("p-main__nav");
-  const currentURL = location.pathname;
-
-  navLinks.forEach(link => {
-    if (link.getAttribute("href") === currentURL) {
-      link.classList.add("active");
-    }
-  });
-});
