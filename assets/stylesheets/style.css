@@ -53,12 +53,12 @@
   opacity: 0.6;
 }
 
-.p-menuItem__label--primary {
+.p-menuItem__label__primary {
   font-size: 16px;
   font-weight: 700;
 }
 
-.p-menuItem__label--secondary {
+.p-menuItem__label__secondary {
   font-size: 10px;
   text-align: center;
 }
@@ -89,16 +89,19 @@
   background-color:#f0f3f5;
 }
 
-.p-main__backGround {
-  background-color: #55352C;
+.p-menuBar {
+    background-color: #55352C;
+
 }
 
-.p-main__wrap {
+.p-menuBar__wrap {
+  width: 100%;
   max-width: 1100px;
   height: 80px;
   margin: 0 auto;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .p-main__logo {
@@ -111,29 +114,23 @@
   object-fit: contain;
 }
 
-.p-main__nav {
-  margin: 0 auto;
+.p-menuBar__nav {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
 }
 
-
-.p-main__navMenu {
+.p-menuBar__navMenu {
   list-style: none;
   display: flex;
-  align-items:center;
-  width: 100%; 
+  align-items: center;
+  width: 100%;
   height: 80px;
   padding-left: 0;
   margin: 0;
-  color: #FFFFFF;
 }
 
-.p-main__navItem {
-  flex-grow: 1;
-  text-align: center;
-  position: relative;
-}
-
-.p-main__navItem {
+.p-menuBar__navItem {
   flex: 1;
   text-align: center;
   position: relative;
@@ -141,7 +138,7 @@
 
 .p-navItem {
   display: block;
-  padding: 22px 26px;
+  padding: 22px 10px;
   white-space: nowrap;
   box-sizing: border-box;
   text-decoration: none;
@@ -174,18 +171,18 @@
   text-align: center;
 }
 
-.p-main__slider {
+.p-mainSlider {
   width: 100%;
   overflow: hidden;
 }
 
-.p-main__slides {
+.p-slides {
   display: flex;
   width: max-content;
   transition: transform 0.5s ease;
 }
 
-.p-main__slides::-webkit-scrollbar {
+.p-slides::-webkit-scrollbar {
   display: none;
 }
 
@@ -207,7 +204,7 @@
   transition: opacity 0.1s ease;
 }
 
-.p-main__dots {
+.p-slidesBots {
   text-align: center;
 }
 
@@ -228,20 +225,32 @@
   background: #007bff;
 }
 
-.p-main__showTimesWrap {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
 .p-showTimesguide__example {
   color: #F06666;
 }
 
-.p-main__opening {
+.p-opening {
   max-width: 1100px;
   margin: 20px auto 0;
   background-color: #ffffff;
   border-radius: 10px;
+}
+
+.p-opening__wrap {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+}
+
+.p-openingTitle {
+  min-width: 110px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.p-showTimesWrap {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .p-showTimestitle {
@@ -274,19 +283,7 @@
   margin-bottom: 0;
 }
 
-.p-main__openingWrap {
-  display: flex;
-  align-items: center;
-  padding: 14px 20px;
-}
-
-.p-main__openingTitle {
-  min-width: 110px;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.p-main__dateCarousel__arrow {
+.p-dateTransform__arrow {
   position: relative;
   width: 30px;
   min-width: 30px;
@@ -295,8 +292,8 @@
   border-radius: 10px;
 }
 
-.p-main__carouselArrow--prev,
-.p-main__carouselArrow--next {
+.p-arrow--prev,
+.p-arrow--next {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -307,51 +304,42 @@
   border-radius: 8px;
 }
 
-.p-main__carouselArrow--prev::before,
-.p-main__carouselArrow--prev::after {
+.p-arrow--prev::before,
+.p-arrow--prev::after,
+.p-arrow--next::before,
+.p-arrow--next::after {
   content: "";
-  position: absolute;  
+  position: absolute;
   width: 8px;
   height: 2px;
   background-color: #0d3fa5;
-  right: 4px;  
 }
 
-.p-main__carouselArrow--prev::after {
-  top: 9px;
-  transform: rotate(45deg);
-  bottom: calc(40% - 2.5px);
-}
-
-.p-main__carouselArrow--prev::before {
-  top: 5px;
+.p-arrow--prev::before {
+  top: 4px;
+  right: 4px;
   transform: rotate(-45deg);
-  bottom: calc(40% - 2.5px);
 }
 
-.p-main__carouselArrow--next::before,
-.p-main__carouselArrow--next:after {
-  content: "";
-  position: absolute;  
-  width: 8px;
-  height: 2px;
-  background-color: #0d3fa5;
-  left: 4px;  
-}
-
-.p-main__carouselArrow--next::after {
-  top: 9px;
-  transform: rotate(-45deg);
-  bottom: calc(40% - 2.5px);
-}
-
-.p-main__carouselArrow--next::before {
-  top: 5px;
+.p-arrow--prev::after {
+  top: 10px;
+  right: 4px;
   transform: rotate(45deg);
-  bottom: calc(40% - 2.5px);
 }
 
-.p-main__dateCarousel {
+.p-arrow--next::after {
+  top: 4px;
+  left: 4px;
+  transform: rotate(-45deg);
+}
+
+.p-arrow--next::before {
+  top: 9px;
+  left: 4px;
+  transform: rotate(45deg);
+}
+
+.p-dateTransform {
   display: flex;
   align-items: stretch;
   column-gap: 10px;
@@ -361,7 +349,7 @@
   margin-bottom: 20px;
 }
 
-.p-main__dateCarousel--swiper {
+.p-dateTransform--swiper {
   position: relative;
   flex: 1;
   min-width: 0;
@@ -372,12 +360,12 @@
   box-sizing: border-box;
 }
 
-.p-main__datesWarp {
+.p-dateTransform__warp {
   width: 100%;
   overflow-x: hidden;
 }
 
-.p-main__dates {
+.p-dateTransform__dates {
   display: flex;
   gap: 30px;
   width: max-content;
@@ -410,18 +398,18 @@
   font-size: 20px;
 }
 
-.p-main__scheduleTitle {
+.p-scheduleTitle {
   font-size: 20px;
   font-weight: 700;
 }
 
-.p-main__scheduleWrap {
+.p-scheduleTab__wrap {
   display: flex;
   font-size: 24px;
   font-weight: 700;
 }
 
-.p-main__scheduleWrap .tab {
+.p-scheduleTab__wrap .tab {
   display: block;
   flex: 1;
   text-align: center;
@@ -432,7 +420,7 @@
   transition: all .3s ease;   
 }
 
-.p-main__scheduleWrap .tab.active {
+.p-scheduleTab__wrap .tab.active {
   color:#000;
   border-bottom-color: #0d3fa5;
 }
@@ -458,23 +446,23 @@
   box-sizing: border-box;
 }
 
-.p-main__tabTitle {
+.p-tabTitle {
   color: #000;
   border-bottom: 3px solid #0d3fa5;
   padding-bottom: 10px;
 }
 
-.p-main__tabContent {
+.p-tabContent {
   display: block;
   margin-top: 30px;
 }
 
-.p-main__tabContent--wrap:nth-child(2) {
+.p-tabContent__wrap:nth-child(2) {
   padding: 20px;
   background-color: #fff;
 }
 
-.p-main__contentItem {
+.p-contentItem {
   position: relative;
   margin-bottom: 20px;
   padding: 20px;
@@ -482,7 +470,7 @@
   border-radius: 10px;
 }
 
-.p-main__contentTitle {
+.p-contentTitle {
   margin-bottom: 20px;
 }
 
@@ -498,13 +486,13 @@
   font-weight: 400;
 }
 
-.p-main__contentSchedule {
+.p-contentSchedule {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-.p-main__scheduleBox {
+.p-scheduleBox {
   padding: 14px;
   background-color: #0d3fa5;
   text-align: center;
@@ -512,26 +500,26 @@
   border-radius: 10px;
 }
 
-.p-main__scheduleBox__time {
+.p-scheduleBox__time {
   font-size: 20px;
 }
 
-.p-main__scheduleBox__info {
+.p-scheduleBox__info {
   font-size: 12px;
 }
 
-.p-main__scheduleBox__purchase {
+.p-scheduleBox__purchase {
   font-size: 20px;
 }
 
-.p-main__screeningTime {
+.p-screeningTime {
   position: absolute;
   top: 20px;
   right: 20px;
   font-size: 14px;
 }
 
-.p-main__contentLink__display {
+.p-contentLink__display {
   display: flex;
   grid-column-gap: 30px;
   -moz-column-gap: 30px;
@@ -543,27 +531,27 @@
   border-radius: 10px;
 }
 
-.p-main__contentLink {
+.p-contentLink {
   position: relative;
   margin-bottom: 20px;
   border-radius: 10px;
 }
 
-.p-main__contentLink .p-main__scheduleBox__time {
+.p-contentLink .p-scheduleBox__time {
   font-size: 20px;
 }
 
-.p-main__contentLink .p-tabContent__description {
+.p-contentLink .p-tabContent__description {
   margin-left: 0;
   font-size: 16px;
   font-weight: 400;
 }
 
-.p-main__contentLink .p-main__contentTitle {
+.p-contentLink .p-contentTitle {
   margin: 0;
 }
 
-.p-main__scheduleInfo {
+.p-scheduleInfo {
   margin-left: auto;
 }
 
@@ -573,17 +561,17 @@
   right: auto;
 }
 
-.p-main__Container {
+.p-container {
   max-width: 1100px;
   margin: 0 auto 40px;
 }
 
-.p-main__Container__title {
+.p-container__title {
   font-weight: 700;
   margin: 20px 0;
 }
 
-.p-main__Container__area {
+.p-container__area {
   display: flex;
   grid-gap: 14px;
   gap: 14px;
@@ -607,8 +595,12 @@
   word-break: break-all;  
 }
 
-.p-main__Container__more {
+.p-container__more {
   text-align: center;
+}
+
+.p-container__more:hover {
+  opacity: 0.6;
 }
 
 .c-more {
@@ -652,7 +644,7 @@
   margin-top: 120px;
 }
 
-.p-main__snsContainer__wrap {
+.p-snsContainer__wrap {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -661,12 +653,16 @@
   padding: 30px 0;
 }
 
-.p-main__snsContainer__wrap h2 {
+.p-snsContainer__wrap h2 {
   margin: 0 auto 0 0;
 }
 
 .p-Item__image {
   margin-right: 0;
+}
+
+.p-Item__image:hover {
+  opacity: 0.6;
 }
 
 .c-icon {
@@ -682,12 +678,12 @@
   padding: 40px 0;
 }
 
-.p-main__access__wrap {
+.p-access__wrap {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.p-main__accessDetail {
+.p-accessDetail {
   margin-bottom: 40px;
 }
 

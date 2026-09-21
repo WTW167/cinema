@@ -1,4 +1,4 @@
-const slideContainer = document.querySelector('.p-main__slides');
+const slideContainer = document.querySelector('.p-slides');
 let slides = document.querySelectorAll('.c-slide');
 const dots = document.querySelectorAll('.c-dot');
 
@@ -77,9 +77,9 @@ slideContainer.addEventListener('transitionend', (e) => {
 });
 
 const items = document.querySelectorAll('.p-dateItem');
-const dates = document.querySelector('.p-main__dates');
-const swiper = document.querySelector('.p-main__dateCarousel--swiper');
-const arrows = document.querySelectorAll('.p-main__dateCarousel__arrow');
+const dates = document.querySelector('.p-dateTransform__dates');
+const swiper = document.querySelector('.p-dateTransform--swiper');
+const arrows = document.querySelectorAll('.p-dateTransform__arrow');
 
 const prev = arrows[0];
 const next = arrows[1];
@@ -124,6 +124,7 @@ next.addEventListener('click', () => {
   index++;
   scrollToCenter(index);
 });
+
 
 const tabs = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.tab-panel');
