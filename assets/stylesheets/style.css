@@ -90,8 +90,7 @@
 }
 
 .p-menuBar {
-    background-color: #55352C;
-
+  background-color: #55352C;
 }
 
 .p-menuBar__wrap {
@@ -157,18 +156,16 @@
   background-color: #fff;
 }
 
-.p-navItem__label {
-  color: #fff;
-}
-
 .p-navItem__label--primary {
   font-size: 14px;
   font-weight: 700;
+  color:#fff
 }
 
 .p-navItem__label--secondary {
   font-size: 10px;
   text-align: center;
+  color:#fff
 }
 
 .p-mainSlider {
@@ -635,7 +632,7 @@
   position: absolute;
   right: 20px;
   bottom: calc(50% - 4px);
-  transform: rotate(45deg);  
+  transform: rotate(-45deg);  
 }
 
 .p-main__snsContainer {
@@ -669,12 +666,12 @@
   width: 26px;
 }
 
-.p-main__access {
+.p-access {
   max-width: 1100px;
   margin: 0 auto 40px;
 }
 
-.p-main__access h1 {
+.p-access h1 {
   padding: 40px 0;
 }
 
@@ -710,8 +707,8 @@
   font-size: 12px;
 }
 
-.access .l-footer {
-  margin-top: 120px;
+.access .l-main {
+  padding-bottom: 120px;
 }
 
 .p-footer__menu {
