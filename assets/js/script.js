@@ -144,3 +144,10 @@ tabs.forEach(tab => {
     document.getElementById(`tab-${target}`).classList.add('active');
   });
 });
+
+const menuButton = document.querySelector('.p-header__menuButton');
+const siteMenu = document.querySelector('.p-header__siteMenu');
+
+menuButton.addEventListener('click', function () {
+  siteMenu.classList.toggle('is-active');
+});
