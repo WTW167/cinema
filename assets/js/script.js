@@ -151,3 +151,16 @@ const siteMenu = document.querySelector('.p-header__siteMenu');
 menuButton.addEventListener('click', function () {
   siteMenu.classList.toggle('is-active');
 });
+
+const toggleButtons = document.querySelectorAll(".p-contentToggle");
+toggleButtons.forEach((button) => {
+
+  button.addEventListener("click", () => {
+    button.classList.toggle("is-open");
+    const contentItem = button.closest(".p-contentItem");
+    const contentSchedule =
+      contentItem.querySelector(".p-contentSchedule");
+    contentSchedule.classList.toggle("is-open");
+  });
+
+});
