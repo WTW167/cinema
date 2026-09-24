@@ -579,9 +579,11 @@ margin-top:4px;
   right: auto;
 }
 
-.p-container {
+.p-newsContainer,
+.p-infoContainer,
+.p-membersContainer {
   max-width: 1100px;
-  margin: 0 auto 40px;
+  margin: 0 20px;
 }
 
 .p-container__title {
@@ -595,6 +597,17 @@ margin-top:4px;
   gap: 14px;
   margin-bottom: 30px;
   flex-wrap: wrap;
+}
+
+.p-container__item {
+  width: calc(24% - 10px);
+  box-sizing: border-box;
+}
+
+.p-newsContainer .p-container__item,
+.p-membersContainer .p-container__item {
+  width: calc(17% - 10px);
+  box-sizing: border-box;
 }
 
 .p-newsItem__image {
@@ -669,6 +682,7 @@ margin-top:4px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 30px 0;
+  background-color: #fff;
 }
 
 .p-snsContainer__wrap h2 {
@@ -1026,12 +1040,21 @@ margin-top:4px;
   }
 
   .p-container__area { 
+    display: flex;    
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 10px;    
   }
 
   .p-container__item {
-    width: auto;
+    width: calc(50% - 5px);
+    box-sizing: border-box;
+  }
+
+  .p-newsContainer .p-container__item,
+  .p-membersContainer .p-container__item {
+    width: calc(50% - 5px);
+    box-sizing: border-box;
   }
 
   .p-Item__image {
@@ -1039,17 +1062,65 @@ margin-top:4px;
     height: 103px;
   }
 
-  .p-newsItem__title {
-    font-size: 12px;
+   .p-Item__imageWrap {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
   }
 
-  .p-infoItem__title {
-    font-size: 12px;
-  }
-
+  .p-newsItem__title,
+  .p-infoItem__title,
   .p-membersItem__title {
     font-size: 12px;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
+
+  .c-more {
+    padding: 19px 64px;
+    font-size: 14px;
+  }
+
+  .p-snsContainer {
+    margin-top: 100px;
+    margin-bottom: -100px;
+  }
+
+  .p-snsContainer__wrap {
+    display: block;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .p-snsContainer__wrap h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .l-footer {
+    margin-top: 100px;
+  }
+
+  .p-footer__menu {
+    row-gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .p-access h1 {
+    padding: 30px 0;
+    font-size: 24px;
+  }
+
+  .p-accessDetail__row {
+    display: block;
+  }
+
+  .access .l-footer {
+    margin: 0;
+  }
+
+
 
   
 
