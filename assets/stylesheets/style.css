@@ -442,6 +442,14 @@
   pointer-events: auto;
 }
 
+.p-tabContent__time__wrap {
+  display: none;
+}
+
+.p-tabContent__wrap--sp {
+  display: none;
+}
+
 .p-main__scheduleWrap label {
   display: block;
   flex: 1;
@@ -464,6 +472,18 @@
 .p-tabContent__wrap:nth-child(2) {
   padding: 20px;
   background-color: #fff;
+}
+
+.p-tabContent__wrap {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.p-tabContent__wrap--sp {
+  display: none;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .p-contentItem {
@@ -549,7 +569,8 @@ font-size:16px;
 margin-top:4px;
 }
 
-.p-contentLink {
+.p-contentLink,
+.p-contentLink--sp {
   position: relative;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -577,6 +598,44 @@ margin-top:4px;
   position: static;
   top: auto;
   right: auto;
+}
+
+.p-contentLink--sp .p-contentLink__display {
+  padding: 0;
+  grid-column-gap: 0;
+}
+
+.p-contentLink--sp .p-tabContent__title {
+  font-size: 14px;
+}
+
+.p-contentLink--sp .p-tabContent__description {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.p-contentLink--sp .p-contentLink__left {
+  width: 135px;
+  min-width: 135px;
+  padding-right: 10px;
+  margin-right: 10px;
+  text-align: center;
+  border-right: 1px solid #5576b9;  
+}
+
+.p-contentLink--sp .p-scheduleBox__time {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.p-contentLink--sp .p-scheduleBox__info {
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.p-contentLink--sp .p-scheduleBox__purchase {
+  font-size: 18px;
 }
 
 .p-newsContainer,
@@ -673,6 +732,12 @@ margin-top:4px;
   width: 100%;
   background-color: #fff;
   margin-top: 120px;
+}
+
+.p-snsContainer{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 120px;
 }
 
 .p-snsContainer__wrap {
@@ -1031,6 +1096,27 @@ margin-top:4px;
   .p-contentItem {
     display:flex;
     flex-direction:column;
+  }
+
+  .p-tabContent__wrap,
+  .p-tabContent__wrap.active {
+  display: none;
+  }
+
+  .p-tabContent__wrap--sp {
+    display: none;
+  }
+
+  .p-tabContent__wrap--sp.active {
+   display: block;
+  }
+
+  .p-tabContent__time__wrap {
+   display: none;
+  }
+
+  .p-tabContent__time__wrap.active {
+  display: block;
   }
 
   .p-screeningTime {

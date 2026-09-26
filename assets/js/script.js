@@ -128,11 +128,10 @@ next.addEventListener('click', () => {
 
 const tabs = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.tab-panel');
-
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
-
     tabs.forEach(t => t.classList.remove('active'));
+
     tab.classList.add('active');
 
     const target = tab.dataset.tab;
@@ -141,7 +140,17 @@ tabs.forEach(tab => {
       panel.classList.remove('active');
     });
 
-    document.getElementById(`tab-${target}`).classList.add('active');
+    if (target === 'title') {
+      document.getElementById('tab-title').classList.add('active');
+    }
+
+    if (target === 'time') {
+      document.getElementById('tab-time').classList.add('active');
+
+      if (window.innerWidth <= 320) {
+        document.getElementById('tab-time--sp').classList.add('active');
+      }
+    }
   });
 });
 
