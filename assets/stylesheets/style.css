@@ -938,17 +938,34 @@ margin-top:4px;
     display: block;
     position: fixed;
     top: 60px;
-    left: -100%;
+    right: -100%;
     width: 100%;
     height: calc(100vh - 60px);
     background: rgba(0,0,0,0.8);
     overflow-y:auto;
-    transition:left .3s;
+    transition:right .3s;
     z-index:1000;
   }
 
   .p-header__siteMenu.is-active {
-    left: 0;
+    right: 0;
+  }
+
+  .access .p-header__siteMenu {
+    display: block;
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+    transition: right .3s;
+    z-index: 1000;
+  }
+
+  .access .p-header__siteMenu.is-active {
+    right: 0;
   }
 
   .p-header__menuList {
