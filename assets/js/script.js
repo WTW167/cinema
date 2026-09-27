@@ -71,9 +71,7 @@ if (slideContainer && slides.length > 0) {
   dots.forEach((dot, i) => {
 
     dot.addEventListener('click', (e) => {
-
       e.preventDefault();
-
       if (isMoving) return;
 
       index = i + 1;
@@ -87,11 +85,9 @@ if (slideContainer && slides.length > 0) {
 
   // 自動スライド
   setInterval(() => {
-
     if (isMoving) return;
 
     isMoving = true;
-
     index++;
 
     moveToSlide(index, true);
@@ -103,26 +99,19 @@ if (slideContainer && slides.length > 0) {
   slideContainer.addEventListener(
     'transitionend',
     (e) => {
-
       if (e.propertyName !== 'transform') {
         return;
       }
 
-      // 最後のクローン → 1枚目へ
       if (index === slides.length - 1) {
-
         index = 1;
-
         moveToSlide(index, false);
         updateActive(index);
 
       }
 
-      // 最初のクローン → 最後の実画像へ
       if (index === 0) {
-
         index = slides.length - 2;
-
         moveToSlide(index, false);
         updateActive(index);
 
@@ -160,7 +149,6 @@ if (
 
   const prev = arrows[0];
   const next = arrows[1];
-
   let dateIndex = 0;
 
   function scrollToCenter(
@@ -270,32 +258,26 @@ const panels =
   document.querySelectorAll('.tab-panel');
 
 if (tabs.length > 0 && panels.length > 0) {
-
   tabs.forEach((tab) => {
 
     tab.addEventListener(
       'click',
       () => {
 
-        // タブのactiveを削除
         tabs.forEach((t) => {
           t.classList.remove('active');
         });
 
-        // クリックしたタブをactive
         tab.classList.add('active');
 
         const target =
           tab.dataset.tab;
 
-        // パネルのactiveを削除
         panels.forEach((panel) => {
           panel.classList.remove('active');
         });
 
-        // タイトルタブ
         if (target === 'title') {
-
           const titlePanel =
             document.getElementById(
               'tab-title'
@@ -358,34 +340,19 @@ console.log(
 );
 
 const menuButton =
-  document.querySelector(
-    '.p-header__menuButton'
-  );
+  document.querySelector('.p-header__menuButton');
+const hamburgerMenu =
+  document.querySelector('.p-header__hamburgerMenu');
 
-const siteMenu =
-  document.querySelector(
-    '.p-header__siteMenu'
-  );
+if (menuButton && hamburgerMenu) {
 
-if (menuButton && siteMenu) {
+  menuButton.addEventListener('click', function () {
+    menuButton.classList.toggle('is-active');
+    hamburgerMenu.classList.toggle('is-active');
 
-  menuButton.addEventListener(
-    'click',
-    function () {
-
-      console.log(
-        'menuButton クリック'
-      );
-
-      siteMenu.classList.toggle(
-        'is-active'
-      );
-
-    }
-  );
+  });
 
 }
-
 
 // ========================================
 // コンテンツ開閉
@@ -397,7 +364,6 @@ const toggleButtons =
   );
 
 if (toggleButtons.length > 0) {
-
   toggleButtons.forEach((button) => {
 
     button.addEventListener(
