@@ -214,9 +214,7 @@ if (
       if (dateIndex <= 0) {
         return;
       }
-
       dateIndex--;
-
       scrollToCenter(
         dateIndex
       );
@@ -235,9 +233,7 @@ if (
       ) {
         return;
       }
-
       dateIndex++;
-
       scrollToCenter(
         dateIndex
       );
@@ -395,10 +391,8 @@ if (toggleButtons.length > 0) {
         contentSchedule.classList.toggle(
           'is-open'
         );
-
       }
     );
-
   });
 
 }
