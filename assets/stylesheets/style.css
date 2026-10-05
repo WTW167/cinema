@@ -292,6 +292,7 @@
   position: relative;
   width: 30px;
   min-width: 30px;
+  cursor: pointer;
   flex-shrink: 0;
   background-color: #0d3fa5;
   border-radius: 10px;
@@ -372,20 +373,25 @@
 
 .p-dateTransform__dates {
   display: flex;
+  align-items: stretch;
   gap: 30px;
   width: max-content;
 }
 
 .p-dateItem {
   flex-shrink: 0;
-  width: 145px;
+  width: 150px;
+}
+
+.p-dateItem__box:has(.p-dateItem__txet) {
+  flex-direction: column;
 }
 
 .p-dateItem__box {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 8px 30px;
+  flex-direction: row;
+  padding: 18px;
+  height: 80px;
   color: #000;
   text-decoration: none;
   border: 1px solid #ececec;
@@ -395,6 +401,11 @@
   cursor: pointer;
 }
 
+.p-dateItem__warp {
+  display: flex;
+  align-items: baseline;
+}
+
 .p-dateItem__day {
   font-size: 30px;
   font-weight: 700;
@@ -402,6 +413,10 @@
 
 .p-dateItem__week {
   font-size: 20px;
+}
+
+.p-dateItem__txet {
+  font-size: 12px;
 }
 
 .p-scheduleTitle {

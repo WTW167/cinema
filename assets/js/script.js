@@ -149,100 +149,58 @@ if (
 
   const prev = arrows[0];
   const next = arrows[1];
-  let dateIndex = 0;
 
-  function scrollToCenter(
-    i,
-    animate = true
-  ) {
+  let moveX = 0;
 
-    const target = items[i];
+  // 1回のクリックで動かす距離
+  const moveAmount = 200;
 
-    if (!target) return;
+  function moveSlider(distance) {
 
-    const swiperWidth =
-      swiper.clientWidth;
-
-    const datesWidth =
-      dates.scrollWidth;
-
-    const targetCenter =
-      target.offsetLeft +
-      target.offsetWidth / 2;
-
-    let moveX =
-      swiperWidth / 2 -
-      targetCenter;
+    const swiperWidth = swiper.clientWidth;
+    const datesWidth = dates.scrollWidth;
 
     const minMoveX =
       swiperWidth - datesWidth;
 
     const maxMoveX = 0;
 
-    moveX =
-      Math.max(
-        minMoveX,
-        moveX
-      );
+    moveX += distance;
 
-    moveX =
-      Math.min(
-        maxMoveX,
-        moveX
-      );
+    // 左端・右端を超えないようにする
+    moveX = Math.max(
+      minMoveX,
+      moveX
+    );
+
+    moveX = Math.min(
+      maxMoveX,
+      moveX
+    );
 
     dates.style.transition =
-      animate
-        ? 'transform 0.5s ease'
-        : 'none';
+      'transform 0.3s ease-in-out';
 
     dates.style.transform =
       `translateX(${moveX}px)`;
   }
 
-  // 初期表示
-  scrollToCenter(
-    dateIndex,
-    false
-  );
-
-  // 前の日付
+  // 前へ
   prev.addEventListener(
     'click',
     () => {
-
-      if (dateIndex <= 0) {
-        return;
-      }
-      dateIndex--;
-      scrollToCenter(
-        dateIndex
-      );
-
+      moveSlider(moveAmount);
     }
   );
 
-  // 次の日付
+  // 次へ
   next.addEventListener(
     'click',
     () => {
-
-      if (
-        dateIndex >=
-        items.length - 1
-      ) {
-        return;
-      }
-      dateIndex++;
-      scrollToCenter(
-        dateIndex
-      );
-
+      moveSlider(-moveAmount);
     }
   );
 }
-
-
 // ========================================
 // タブ切り替え
 // ========================================
