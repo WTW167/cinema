@@ -250,7 +250,6 @@
   margin: 0 auto;
 }
 
-
 .p-opening__wrap {
   display: flex;
   align-items: center;
@@ -677,7 +676,6 @@
 }
 
 .p-container__item {
-  width: calc(24% - 10px);
   box-sizing: border-box;
 }
 
