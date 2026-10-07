@@ -62,6 +62,14 @@
   display: none;
 }
 
+.p-main__title {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
 .p-menuItem:hover {
   opacity: 0.6;
 }
@@ -100,10 +108,13 @@
 
 .l-main {
   background-color:#f0f3f5;
+  padding: 0 30px;
 }
 
 .p-menuBar {
   background-color: #55352C;
+  width: calc(100% + 60px);
+  margin-left: -30px;  
 }
 
 .p-menuBar__wrap {
@@ -179,8 +190,9 @@
 }
 
 .p-mainSlider {
-  width: 100%;
-  overflow: hidden;
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  overflow: hidden;  
 }
 
 .p-slides {
@@ -295,6 +307,7 @@
   flex-shrink: 0;
   background-color: #0d3fa5;
   border-radius: 10px;
+  border: none;
 }
 
 .p-arrow--prev,
@@ -380,6 +393,7 @@
 .p-dateItem {
   flex-shrink: 0;
   width: 150px;
+  list-style:none
 }
 
 .p-dateItem__box:has(.p-dateItem__txet) {
@@ -425,8 +439,6 @@
 
 .p-scheduleTab__wrap {
   display: flex;
-  font-size: 24px;
-  font-weight: 700;
 }
 
 .p-scheduleTab__wrap .tab {
@@ -474,10 +486,15 @@
   box-sizing: border-box;
 }
 
-.p-tabTitle {
+.p-tabTitle,
+.p-tabTime {
+  border: none;
+  cursor: pointer;
   color: #000;
   border-bottom: 3px solid #0d3fa5;
   padding-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .p-tabContent {
@@ -761,6 +778,8 @@
 .p-snsContainer{
   background-color: #fff;
   margin-top: 120px;
+  width: calc(100% + 60px);
+  margin-left: -30px;
 }
 
 .p-snsContainer__wrap {
@@ -1053,8 +1072,17 @@
     text-decoration: none;
   }
 
+  .l-main {
+    padding: 0;
+  }
+
   .p-menuItem {
     padding: 25px 20px;
+  }
+
+  .p-menuBar {
+    width: calc(100% + 10px);
+    margin-left: 0px;
   }
 
   .p-menuBar__wrap{
@@ -1136,6 +1164,12 @@
     font-size: 16px;
   }
 
+  .p-tabTitle,
+  .p-tabTime {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
   .p-tabContent__title {
     font-size: 14px;
     font-weight: 300;
@@ -1211,6 +1245,7 @@
 
   .p-tabContent__description {
    margin-left: 0;
+   font-size: 12px;
   }
 
   .p-screeningTime {
