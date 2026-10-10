@@ -193,12 +193,20 @@
   width: calc(100% + 60px);
   margin-left: -30px;
   overflow: hidden;  
+  user-select: none;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.p-mainSlider:active {
+  cursor: pointer;
 }
 
 .p-slides {
   display: flex;
   width: max-content;
   transition: transform 0.5s ease;
+  will-change: transform;  
 }
 
 .p-slides::-webkit-scrollbar {
@@ -216,6 +224,7 @@
 
 .c-slide img {
   display: block;
+  pointer-events: none;
 }
 
 .c-slide img:hover {
@@ -235,6 +244,7 @@
   background: #ccc;
   border-radius: 10px;
   margin: 0 0 0 10px;
+  transition: background-color 0.3s ease;
 }
 
 .c-dot:nth-child(1) {

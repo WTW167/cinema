@@ -49,19 +49,143 @@ if (slideContainer && slides.length > 0) {
 
   function updateActive(i) {
     slides.forEach((slide, idx) => {
-      slide.classList.toggle(
-        'active',
-        idx === i
-      );
+      slide.classList.toggle('active', idx === i);
     });
 
+    // クローン画像も本来のスライドに対応するドットを点灯
+    const realIndex =
+      i === 0 ? slides.length - 2 :
+        i === slides.length - 1 ? 1 :
+          i;
+
     dots.forEach((dot, idx) => {
-      dot.classList.toggle(
-        'active',
-        idx === i - 1
-      );
+      dot.classList.toggle('active', idx === realIndex - 1);
     });
   }
+
+  // ドラッグ操作
+  let isDragging = false;
+  let startX = 0;
+  let startTranslateX = 0;
+  let dragMoved = false;
+  let suppressClick = false;
+
+  const dragRatio = 0.8; // マウス移動に対するスライドの移動率
+  const dragThreshold = 50; // スライド切り替え判定(px)
+
+  function getTranslateX() {
+    const transform = getComputedStyle(slideContainer).transform;
+
+    if (transform === 'none') return 0;
+
+    return new DOMMatrixReadOnly(transform).m41;
+  }
+
+  // 中央に最も近いスライドを取得
+  function getClosestSlideIndex() {
+    const center =
+      slideContainer.parentElement.getBoundingClientRect().width / 2;
+
+    const translateX = getTranslateX();
+    let closestIndex = 0;
+    let minDistance = Infinity;
+
+    slides.forEach((slide, i) => {
+      const slideCenter =
+        slide.offsetLeft + slide.offsetWidth / 2 + translateX;
+
+      const distance = Math.abs(center - slideCenter);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = i;
+      }
+    });
+
+    return closestIndex;
+  }
+
+  // 押したとき
+  slideContainer.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+
+    isDragging = true;
+    dragMoved = false;
+    startX = e.clientX;
+    startTranslateX = getTranslateX();
+
+    // 自動スライドとアニメーションを一時停止
+    isMoving = true;
+    slideContainer.style.transition = 'none';
+
+    slideContainer.setPointerCapture(e.pointerId);
+  });
+
+  // 押したまま動かす
+  slideContainer.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+
+    const deltaX = e.clientX - startX;
+
+    if (Math.abs(deltaX) > 5) {
+      dragMoved = true;
+    }
+
+    if (!dragMoved) return;
+
+    // マウスより少しゆっくりスライドを動かす
+    slideContainer.style.transform =
+      `translateX(${startTranslateX + deltaX * dragRatio}px)`;
+
+    // 中央のスライドに合わせてドットを更新
+    const closestIndex = getClosestSlideIndex();
+    updateActive(closestIndex);
+  });
+
+  // マウスを離したとき
+  function endDrag(e) {
+    if (!isDragging) return;
+
+    isDragging = false;
+
+    if (slideContainer.hasPointerCapture(e.pointerId)) {
+      slideContainer.releasePointerCapture(e.pointerId);
+    }
+
+    // クリックだけなら通常動作
+    if (!dragMoved) {
+      isMoving = false;
+      return;
+    }
+
+    suppressClick = true;
+
+    const deltaX = (e.clientX - startX) * dragRatio;
+
+    // 十分に動かした場合は、ドラッグ方向へ1枚移動
+    if (Math.abs(deltaX) >= dragThreshold) {
+      index += deltaX < 0 ? 1 : -1;
+    } else {
+      // 少しだけ動かした場合は、中央に最も近いスライドへ
+      index = getClosestSlideIndex();
+    }
+
+    // 自動スライドと同じ0.5秒のアニメーションで中央へ
+    moveToSlide(index, true);
+    updateActive(index);
+  }
+
+  slideContainer.addEventListener('pointerup', endDrag);
+  slideContainer.addEventListener('pointercancel', endDrag);
+
+  // ドラッグ後にリンクが誤って開くのを防ぐ
+  slideContainer.addEventListener('click', (e) => {
+    if (suppressClick) {
+      e.preventDefault();
+      e.stopPropagation();
+      suppressClick = false;
+    }
+  }, true);
 
   // 初期表示
   moveToSlide(index, false);
