@@ -321,6 +321,15 @@
   margin-top: 25px;
 }
 
+.p-dateTransform__inner {
+  display: flex;
+  align-items: stretch;
+  column-gap: 10px; 
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
 .p-dateTransform__arrow {
   position: relative;
   width: 30px;
@@ -1196,6 +1205,16 @@
     width: 100%;
   }
 
+  .p-scheduleTab {
+    padding: 0 30px;
+  }
+
+  .p-dateTransform {
+  padding: 0 30px;
+  box-sizing: border-box;
+  background-color: transparent; 
+  }
+
   .p-dateTransform__dates {
     gap: 15px;
   }
@@ -1219,6 +1238,7 @@
 
   .p-scheduleTitle{
     font-size: 16px;
+    padding: 0 30px;
   }
 
   .p-scheduleTab__wrap {
@@ -1320,7 +1340,6 @@
   .p-membersContainer {
     margin: 0 20px;
   }
-
 
   .p-newsItem__title,
   .p-infoItem__title,
