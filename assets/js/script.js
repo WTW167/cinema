@@ -2,9 +2,9 @@
 // メインカルーセル
 // ========================================
 
-const slideContainer = document.querySelector('.p-slides');
-let slides = document.querySelectorAll('.c-slide');
-const dots = document.querySelectorAll('.c-dot');
+const slideContainer = document.querySelector('.js-slides');
+let slides = document.querySelectorAll('.js-slide');
+const dots = document.querySelectorAll('.js-dot');
 
 if (slideContainer && slides.length > 0) {
 
@@ -17,7 +17,7 @@ if (slideContainer && slides.length > 0) {
   slideContainer.appendChild(firstClone);
   slideContainer.insertBefore(lastClone, slides[0]);
 
-  slides = document.querySelectorAll('.c-slide');
+  slides = document.querySelectorAll('.js-slide');
 
   let index = 1;
   let isMoving = false;
@@ -70,8 +70,8 @@ if (slideContainer && slides.length > 0) {
   let dragMoved = false;
   let suppressClick = false;
 
-  const dragRatio = 0.8; // マウス移動に対するスライドの移動率
-  const dragThreshold = 50; // スライド切り替え判定(px)
+  const dragRatio = 0.8;
+  const dragThreshold = 50;
 
   function getTranslateX() {
     const transform = getComputedStyle(slideContainer).transform;
@@ -253,16 +253,16 @@ if (slideContainer && slides.length > 0) {
 // ========================================
 
 const items =
-  document.querySelectorAll('.p-dateItem');
+  document.querySelectorAll('.js-dateItem');
 
 const dates =
-  document.querySelector('.p-dateTransform__dates');
+  document.querySelector('.js-dateTransform__dates');
 
 const swiper =
-  document.querySelector('.p-dateTransform--swiper');
+  document.querySelector('.js-dateTransform--swiper');
 
 const arrows =
-  document.querySelectorAll('.p-dateTransform__arrow');
+  document.querySelectorAll('.js-dateTransform__arrow');
 
 if (
   items.length > 0 &&
@@ -409,7 +409,7 @@ if (tabs.length > 0 && panels.length > 0) {
 
 
 // ========================================
-// ヘッダーメニュー
+// ヘッダーハンバーガーメニュー
 // index / access 共通
 // ========================================
 
@@ -418,9 +418,9 @@ console.log(
 );
 
 const menuButton =
-  document.querySelector('.p-header__menuButton');
+  document.querySelector('.js-header__menuButton');
 const hamburgerMenu =
-  document.querySelector('.p-header__hamburgerMenu');
+  document.querySelector('.js-header__hamburgerMenu');
 
 if (menuButton && hamburgerMenu) {
 
@@ -433,12 +433,12 @@ if (menuButton && hamburgerMenu) {
 }
 
 // ========================================
-// コンテンツ開閉
+// メディアクリエ時のp-scheduleBoxの展開
 // ========================================
 
 const toggleButtons =
   document.querySelectorAll(
-    '.p-contentToggle'
+    '.js-contentToggle'
   );
 
 if (toggleButtons.length > 0) {
@@ -463,7 +463,7 @@ if (toggleButtons.length > 0) {
 
         const contentSchedule =
           contentItem.querySelector(
-            '.p-contentSchedule'
+            '.js-contentSchedule'
           );
 
         if (!contentSchedule) {

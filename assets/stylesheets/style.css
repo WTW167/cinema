@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.p-header__menuButton {
+.js-header__menuButton {
   display: none;
 }
 
@@ -58,7 +58,7 @@
   margin-right: 22px;
 }
 
-.p-header__hamburgerMenu {
+.js-header__hamburgerMenu {
   display: none;
 }
 
@@ -202,32 +202,32 @@
   cursor: pointer;
 }
 
-.p-slides {
+.js-slides {
   display: flex;
   width: max-content;
   transition: transform 0.5s ease;
   will-change: transform;  
 }
 
-.p-slides::-webkit-scrollbar {
+.js-slides::-webkit-scrollbar {
   display: none;
 }
 
-.c-slide {
+.js-slide {
   opacity: 0.4;
   transition: opacity 0.3s ease;
 }
 
-.c-slide.active {
+.js-slide.active {
   opacity: 1;
 }
 
-.c-slide img {
+.js-slide img {
   display: block;
   pointer-events: none;
 }
 
-.c-slide img:hover {
+.js-slide img:hover {
   opacity: 0.8;
   transition: opacity 0.1s ease;
 }
@@ -237,7 +237,7 @@
   margin-bottom: 20px;
 }
 
-.c-dot {
+.js-dot {
   display: inline-block;
   width: 50px;
   height: 6px;
@@ -247,15 +247,15 @@
   transition: background-color 0.3s ease;
 }
 
-.c-dot:nth-child(1) {
+.js-dot:nth-child(1) {
   margin: 0;
 }
 
-.c-dot:hover {
+.js-dot:hover {
   background: #666;
 }
 
-.c-dot.active {
+.js-dot.active {
   background: #007bff;
 }
 
@@ -330,7 +330,7 @@
   border-radius: 10px;
 }
 
-.p-dateTransform__arrow {
+.js-dateTransform__arrow {
   position: relative;
   width: 30px;
   min-width: 30px;
@@ -396,9 +396,12 @@
   background-color: #fff;
   border-radius: 10px;
   margin-bottom: 20px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.p-dateTransform--swiper {
+.js-dateTransform--swiper {
   position: relative;
   flex: 1;
   min-width: 0;
@@ -414,14 +417,14 @@
   overflow-x: hidden;
 }
 
-.p-dateTransform__dates {
+.js-dateTransform__dates {
   display: flex;
   align-items: stretch;
   gap: 30px;
   width: max-content;
 }
 
-.p-dateItem {
+.js-dateItem {
   flex-shrink: 0;
   width: 150px;
   list-style:none
@@ -466,6 +469,15 @@
 .p-scheduleTitle {
   font-size: 20px;
   font-weight: 700;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-scheduleTab {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .p-scheduleTab__wrap {
@@ -563,7 +575,7 @@
   border-radius: 10px;
 }
 
-.p-contentToggle {
+.js-contentToggle {
   display:none;
 } 
 
@@ -583,7 +595,7 @@
   font-weight: 400;
 }
 
-.p-contentSchedule {
+.js-contentSchedule {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -972,7 +984,7 @@
     overflow-x: hidden;
   } 
 
-  .l-header:has(.p-header__hamburgerMenu.is-active) {
+  .l-header:has(.js-header__hamburgerMenu.is-active) {
     position: fixed;
     top: 0;
     left: 0;
@@ -1015,7 +1027,7 @@
     white-space: nowrap;
   }
 
-  .p-header__menuButton {
+  .js-header__menuButton {
     display: block;
     position: relative;
     width: 40px;
@@ -1096,7 +1108,7 @@
     padding: 0;
   }
 
-  .p-header__hamburgerMenu {
+  .js-header__hamburgerMenu {
     display: block;
     position: fixed;
     top: 60px;
@@ -1109,7 +1121,7 @@
     z-index: 1000;
   }
 
-  .p-header__hamburgerMenu.is-active {
+  .js-header__hamburgerMenu.is-active {
     right: 0;
   }
 
@@ -1201,7 +1213,7 @@
     font-size:9px;
   }
 
-  .c-slide img {
+  .js-slide img {
     width: 100%;
   }
 
@@ -1215,11 +1227,11 @@
   background-color: transparent; 
   }
 
-  .p-dateTransform__dates {
+  .js-dateTransform__dates {
     gap: 15px;
   }
 
-  .p-dateItem {
+  .js-dateItem {
     width: auto;
   }
 
@@ -1256,7 +1268,7 @@
     font-weight: 400;
   }
 
-  .p-contentSchedule {
+  .js-contentSchedule {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -1267,7 +1279,7 @@
     transition: opacity 1s ease;
   }
 
-  .p-contentSchedule.is-open {
+  .js-contentSchedule.is-open {
     max-height: 500px;
     opacity: 1;
     margin-top: 10px;
@@ -1279,7 +1291,7 @@
     align-items:flex-start;    
   }
 
-  .p-contentToggle {
+  .js-contentToggle {
     display: block;
     border:none;
     background:none;
@@ -1288,11 +1300,11 @@
     line-height:1;
   }
 
-  .p-contentToggle.is-open {
+  .js-contentToggle.is-open {
     font-size:0;
   }
 
-  .p-contentToggle.is-open::before {
+  .js-contentToggle.is-open::before {
     content:"−";
     font-size:36px;
   }
@@ -1333,6 +1345,18 @@
     align-items:center;
     justify-content:space-between;
     gap:20px;
+  }
+
+  .p-scheduleBox {
+    width: 100%;
+  }
+
+  .u-bg-gray {
+    width: 100%;
+  }
+
+  .p-scheduleBox__purchase {
+    margin-left: auto;
   }
 
   .p-newsContainer,
