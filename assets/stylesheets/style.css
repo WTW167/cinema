@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.js-header__menuButton {
+.p-header__menuButton {
   display: none;
 }
 
@@ -59,7 +59,7 @@
   margin-right: 22px;
 }
 
-.js-header__hamburgerMenu {
+.p-header__hamburgerMenu {
   display: none;
 }
 
@@ -209,32 +209,32 @@
   cursor: pointer;
 }
 
-.js-slides {
+.p-slides {
   display: flex;
   width: max-content;
   transition: transform 0.5s ease;
   will-change: transform;  
 }
 
-.js-slides::-webkit-scrollbar {
+.p-slides::-webkit-scrollbar {
   display: none;
 }
 
-.js-slide {
+.c-slide {
   opacity: 0.4;
   transition: opacity 0.3s ease;
 }
 
-.js-slide.active {
+.c-slide.active {
   opacity: 1;
 }
 
-.js-slide img {
+.c-slide img {
   display: block;
   pointer-events: none;
 }
 
-.js-slide img:hover {
+.c-slide img:hover {
   opacity: 0.8;
   transition: opacity 0.1s ease;
 }
@@ -244,7 +244,7 @@
   margin-bottom: 20px;
 }
 
-.js-dot {
+.c-slideDot {
   display: inline-block;
   width: 50px;
   height: 6px;
@@ -254,15 +254,15 @@
   transition: background-color 0.3s ease;
 }
 
-.js-dot:nth-child(1) {
+.c-slideDot:nth-child(1) {
   margin: 0;
 }
 
-.js-dot:hover {
+.c-slideDot:hover {
   background: #666;
 }
 
-.js-dot.active {
+.c-slideDot.active {
   background: #007bff;
 }
 
@@ -275,8 +275,8 @@
 .p-newsContainer,
 .p-infoContainer, 
 .p-membersContainer {
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%;
+  margin-inline: auto;
 }
 
 .p-infoContainer .p-container__area {
@@ -337,7 +337,7 @@
   border-radius: 10px;
 }
 
-.js-dateTransform__arrow {
+.p-dateTransform__arrow {
   position: relative;
   width: 30px;
   min-width: 30px;
@@ -408,7 +408,7 @@
   margin-right: auto;
 }
 
-.js-dateTransform--swiper {
+.p-dateTransform--swiper {
   position: relative;
   flex: 1;
   min-width: 0;
@@ -424,14 +424,14 @@
   overflow-x: hidden;
 }
 
-.js-dateTransform__dates {
+.p-dateTransform__dates {
   display: flex;
   align-items: stretch;
   gap: 30px;
   width: max-content;
 }
 
-.js-dateItem {
+.p-dateItem {
   flex-shrink: 0;
   width: 150px;
   list-style:none
@@ -475,13 +475,13 @@
 .p-scheduleTitle {
   font-size: 20px;
   font-weight: 700;
-  max-width: 1100px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .p-scheduleTab {
-  max-width: 1100px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -519,7 +519,7 @@
   pointer-events: auto;
 }
 
-.p-tabContent__time__wrap {
+.p-tabContent__timeBox {
   display: none;
 }
 
@@ -581,7 +581,7 @@
   border-radius: 10px;
 }
 
-.js-contentToggle {
+.p-contentToggle {
   display:none;
 } 
 
@@ -601,7 +601,7 @@
   font-weight: 400;
 }
 
-.js-contentSchedule {
+.p-contentSchedule {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -853,7 +853,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
   padding: 30px 0;
 }
@@ -989,7 +989,7 @@
     overflow-x: hidden;
   } 
 
-  .l-header:has(.js-header__hamburgerMenu.is-active) {
+  .l-header:has(.p-header__hamburgerMenu.is-active) {
     position: fixed;
     top: 0;
     left: 0;
@@ -1032,7 +1032,7 @@
     white-space: nowrap;
   }
 
-  .js-header__menuButton {
+  .p-header__menuButton {
     display: block;
     position: relative;
     width: 40px;
@@ -1092,10 +1092,6 @@
     z-index:1000;
   }
 
-  .p-header__siteMenu.is-active {
-    right: 0;
-  }
-
   .p-header__menuList {
     display: block;
     list-style: none;
@@ -1121,7 +1117,7 @@
     overflow: hidden;
   }
 
-  .js-header__hamburgerMenu {
+  .p-header__hamburgerMenu {
     display: block;
     position: fixed;
     top: 60px;
@@ -1134,11 +1130,10 @@
     z-index: 1000;
   }
 
-  .js-header__hamburgerMenu.is-active {
+  .p-header__hamburgerMenu.is-active {
     position: fixed;
     right: 0;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   .p-header__hamburgerTitle {
@@ -1233,8 +1228,8 @@
     font-size:9px;
   }
 
-  .js-slide img {
-    width: 100%;
+  .c-slide img {
+    max-width: 100%;
   }
 
   .p-dateTransform {
@@ -1242,11 +1237,11 @@
   background-color: transparent; 
   }
 
-  .js-dateTransform__dates {
+  .p-dateTransform__dates {
     gap: 15px;
   }
 
-  .js-dateItem {
+  .p-dateItem {
     width: auto;
   }
 
@@ -1286,7 +1281,7 @@
     font-weight: 400;
   }
 
-  .js-contentSchedule {
+  .p-contentSchedule {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -1297,7 +1292,7 @@
     transition: opacity 1s ease;
   }
 
-  .js-contentSchedule.is-open {
+  .p-contentSchedule.is-open {
     max-height: 500px;
     opacity: 1;
     margin-top: 10px;
@@ -1309,7 +1304,7 @@
     align-items:flex-start;    
   }
 
-  .js-contentToggle {
+  .p-contentToggle {
     display: block;
     border:none;
     background:none;
@@ -1318,11 +1313,11 @@
     line-height:1;
   }
 
-  .js-contentToggle.is-open {
+  .p-contentToggle.is-open {
     font-size:0;
   }
 
-  .js-contentToggle.is-open::before {
+  .p-contentToggle.is-open::before {
     content:"−";
     font-size:36px;
   }
@@ -1341,11 +1336,11 @@
    display: block;
   }
 
-  .p-tabContent__time__wrap {
+  .p-tabContent__timeBox {
    display: none;
   }
 
-  .p-tabContent__time__wrap.active {
+  .p-tabContent__timeBox.active {
    display: block;
   }
 

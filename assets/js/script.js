@@ -395,10 +395,10 @@ if (
 // ========================================
 
 const tabs =
-  document.querySelectorAll('.tab');
+  document.querySelectorAll('.js-tab');
 
 const panels =
-  document.querySelectorAll('.tab-panel');
+  document.querySelectorAll('.js-tab-panel');
 
 if (tabs.length > 0 && panels.length > 0) {
   tabs.forEach((tab) => {
