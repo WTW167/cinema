@@ -212,6 +212,12 @@
   cursor: pointer;
 }
 
+.p-mainSlider img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .p-slides {
   display: flex;
   width: max-content;

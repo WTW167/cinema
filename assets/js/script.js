@@ -147,17 +147,15 @@ if (slideContainer && slides.length > 0) {
   slideContainer.addEventListener('pointerdown', (e) => {
     if (e.pointerType === 'mouse' && e.button !== 0) return;
 
-    console.log(
-      'DOWN',
-      'clientX=', e.clientX
-    );
+    // ブラウザ標準のドラッグ・選択動作を抑制
+    e.preventDefault();
 
     isDragging = true;
     dragMoved = false;
     startX = e.clientX;
     startTranslateX = getTranslateX();
 
-    // 自動スライドとアニメーションを一時停止
+    // ドラッグ中は自動スライドを一時停止
     isMoving = true;
     slideContainer.style.transition = 'none';
 
@@ -170,11 +168,13 @@ if (slideContainer && slides.length > 0) {
 
     const deltaX = e.clientX - startX;
 
-    console.log(
-      'MOVE',
-      'clientX=', e.clientX,
-      'deltaX=', deltaX
-    );
+    console.log({
+      startX,
+      currentX: e.clientX,
+      deltaX,
+      startTranslateX,
+      currentTranslateX: getTranslateX()
+    });
 
     if (Math.abs(deltaX) > 5) {
       dragMoved = true;
