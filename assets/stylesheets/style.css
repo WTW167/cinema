@@ -66,7 +66,7 @@
 .p-main__BodyInner,
 .p-main__ClosingInner {
   width: 100%;
-  max-width: 1105px;
+  max-width: 1100px;
   margin-inline: auto;
   padding-inline: 20px;
   box-sizing: border-box;
@@ -74,7 +74,6 @@
 
 .p-main__ClosingSection {
   background-color: #fff;
-  width: 100%;
 }
 
 .p-main__title {
@@ -458,7 +457,7 @@
   cursor: pointer;
 }
 
-.p-dateItem__warp {
+.p-dateItem__wrap {
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -507,7 +506,8 @@
   padding: 15px 0;
   color: #999;             
   border-bottom: 3px solid #ccc; 
-  transition: all .3s ease;   
+  transition: all .3s ease; 
+  background-color: #f0f3f5;;  
 }
 
 .p-scheduleTab__wrap .tab.active {
@@ -998,6 +998,10 @@
     overflow-x: hidden;
   } 
 
+  body.is-scrollLocked {
+    position: fixed;
+  }
+
   .l-header:has(.p-header__hamburgerMenu.is-active) {
     position: fixed;
     top: 0;
@@ -1116,14 +1120,6 @@
   .p-header__mobileMenuList {
     margin: 0 0 100px;
     padding: 0;
-  }
-
-  body.is-scrollLocked {
-    position: fixed;
-    left: 0;
-    right: 0;
-    width: 100%;
-    overflow: hidden;
   }
 
   .p-header__hamburgerMenu {
