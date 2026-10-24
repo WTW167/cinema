@@ -531,10 +531,6 @@
   display: none;
 }
 
-.p-tabContent__wrap--sp {
-  display: none;
-}
-
 .p-main__scheduleWrap label {
   display: block;
   flex: 1;
@@ -623,16 +619,13 @@
   border-radius: 10px;
 }
 
-.p-scheduleBox__time {
-  font-size: 20px;
-}
-
 .p-scheduleBox__info {
   font-size: 12px;
 }
 
 .p-scheduleBox__purchase {
   font-size: 20px;
+  min-width: 100px;
 }
 
 .p-screeningTime {
@@ -697,48 +690,6 @@
   position: static;
   top: auto;
   right: auto;
-}
-
-.p-contentLink--sp .p-contentLink__display {
-  padding: 20px 14px;
-  grid-column-gap: 0;
-}
-
-.p-contentLink--sp .p-tabContent__title {
-  font-size: 14px;
-}
-
-.p-contentLink--sp .p-tabContent__description {
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-.p-contentLink--sp .p-contentLink__left {
-  width: 135px;
-  min-width: 135px;
-  margin-right: 10px;
-  text-align: center;
-  border-right: 1px solid #5576b9;  
-}
-
-.p-contentLink--sp .p-contentLink__right {
-  padding-right: 10px;
-  padding-right: 10px;
-}
-
-.p-contentLink--sp .p-scheduleBox__time {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-
-.p-contentLink--sp .p-scheduleBox__info {
-  font-size: 12px;
-  margin-bottom: 2px;
-}
-
-.p-contentLink--sp .p-scheduleBox__purchase {
-  font-size: 18px;
 }
 
 .p-container__title {
@@ -1365,10 +1316,6 @@
     gap:10px;
   }
 
-  .p-scheduleBox__time {
-    font-size: 15px;
-  }
-
   .p-scheduleBox {
     padding: 16px;
     width: 100%;
@@ -1380,7 +1327,53 @@
   }
 
   .p-scheduleBox__start{
-  font-size:18px;
+    font-size:18px;
+    margin-right: 5px;
+  }
+
+  .p-contentLink--sp .p-contentLink__display {
+    padding: 20px 14px;
+    grid-column-gap: 0;
+  }
+
+  .p-contentLink--sp .p-tabContent__title {
+    font-size: 14px;
+  }
+
+  .p-contentLink--sp .p-tabContent__description {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .p-contentLink--sp .p-contentLink__left {
+    width: 135px;
+    min-width: 135px;
+    margin-right: 10px;
+    text-align: center;
+    border-right: 1px solid #5576b9;  
+  }
+
+  .p-contentLink--sp .p-contentLink__right {
+    padding-right: 10px;
+    padding-right: 10px;
+  }
+
+  .p-contentLink--sp .p-scheduleBox__time {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .p-contentLink--sp .p-scheduleBox__info {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .p-contentLink--sp .p-scheduleBox__purchase {
+    font-size: 18px;
+  }
+
+  .p-tabContent__wrap--sp {
+    display: none;
   }
 
   .p-newsItem__title,

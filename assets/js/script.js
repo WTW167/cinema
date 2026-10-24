@@ -394,11 +394,41 @@ if (
 // タブ切り替え
 // ========================================
 
-const tabs =
-  document.querySelectorAll('.js-tab');
 
-const panels =
-  document.querySelectorAll('.js-tab-panel');
+const tabs = document.querySelectorAll('.js-tab');
+const panels = document.querySelectorAll('.js-tab-panel');
+
+const titlePanel = document.getElementById('tab-title');
+const timePanel = document.getElementById('tab-time');
+const timeSpPanel = document.getElementById('tab-time--sp');
+
+// 表示するパネルを切り替える関数
+function switchTab(target) {
+  panels.forEach((panel) => {
+    panel.classList.remove('active');
+  });
+
+  // タイトル別に表示
+  if (target === 'title') {
+    if (titlePanel) {
+      titlePanel.classList.add('active');
+    }
+    return;
+  }
+
+  // 上映時間順に表示
+  if (target === 'time') {
+    if (window.innerWidth <= 900) {
+      if (timeSpPanel) {
+        timeSpPanel.classList.add('active');
+      }
+    } else {
+      if (timePanel) {
+        timePanel.classList.add('active');
+      }
+    }
+  }
+}
 
 if (tabs.length > 0 && panels.length > 0) {
   tabs.forEach((tab) => {
@@ -409,46 +439,19 @@ if (tabs.length > 0 && panels.length > 0) {
 
       tab.classList.add('active');
 
-      const target = tab.dataset.tab;
-
-      panels.forEach((panel) => {
-        panel.classList.remove('active');
-      });
-
-      // タイトル順タブ
-      if (target === 'title') {
-        const titlePanel =
-          document.getElementById('tab-title');
-
-        if (titlePanel) {
-          titlePanel.classList.add('active');
-        }
-      }
-
-      // 時間順タブ
-      if (target === 'time') {
-        const timePanel =
-          document.getElementById('tab-time');
-
-        if (timePanel) {
-          timePanel.classList.add('active');
-        }
-
-        // 320px以下の場合
-        const timeSpPanel =
-          document.getElementById('tab-time--sp');
-
-        if (
-          window.innerWidth <= 320 &&
-          timeSpPanel
-        ) {
-          timeSpPanel.classList.add('active');
-        }
-      }
+      switchTab(tab.dataset.tab);
     });
   });
 }
 
+// 画面幅が変更されたとき
+window.addEventListener('resize', () => {
+  const activeTab = document.querySelector('.js-tab.active');
+
+  if (activeTab) {
+    switchTab(activeTab.dataset.tab);
+  }
+});
 
 // ========================================
 // ヘッダーハンバーガーメニュー
