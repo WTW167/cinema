@@ -1324,6 +1324,7 @@
   .p-scheduleBox__purchase {
     margin-left: auto;
     font-size: 18px;
+    min-width: 0;
   }
 
   .p-scheduleBox__start{
