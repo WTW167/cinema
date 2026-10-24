@@ -429,7 +429,6 @@
 
 .p-dateTransform__warp {
   width: 100%;
-  overflow-x: hidden;
 }
 
 .p-dateTransform__dates {
@@ -617,7 +616,7 @@
 }
 
 .p-scheduleBox {
-  padding: 14px;
+  padding: 20px 14px;
   background-color: #0d3fa5;
   text-align: center;
   color: #fff;
@@ -1363,15 +1362,21 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+    gap:10px;
+  }
+
+  .p-scheduleBox__time {
+    font-size: 15px;
   }
 
   .p-scheduleBox {
+    padding: 16px;
     width: 100%;
   }
 
   .p-scheduleBox__purchase {
     margin-left: auto;
+    font-style: 18px;
   }
 
   .p-newsItem__title,
