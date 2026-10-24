@@ -1177,7 +1177,7 @@
   }
 
   .p-slidesBots {
-    padding: 0 100px;
+    position: static;
   }
 
   .p-menuBar__wrap{
