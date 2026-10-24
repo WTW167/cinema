@@ -1379,6 +1379,10 @@
     font-size: 18px;
   }
 
+  .p-scheduleBox__start{
+  font-size:18px;
+  }
+
   .p-newsItem__title,
   .p-infoItem__title,
   .p-membersItem__title {
