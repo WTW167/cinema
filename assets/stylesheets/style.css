@@ -230,7 +230,8 @@
 
 .c-slide {
   display: block;
-  flex: 0 0 100%;
+  flex: 0 0 auto;
+  width: min(100vw, 900px);
   min-width: 0;
   opacity: 0.4;
   transition: opacity 0.3s ease;
