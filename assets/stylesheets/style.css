@@ -201,6 +201,7 @@
 }
 
 .p-mainSlider {
+  width: 100%;
   overflow: hidden;  
   user-select: none;
   cursor: grab;
@@ -219,7 +220,7 @@
 
 .p-slides {
   display: flex;
-  width: max-content;
+  width: 100%;
   transition: transform 0.5s ease;
   will-change: transform;  
 }
@@ -229,6 +230,9 @@
 }
 
 .c-slide {
+  display: block;
+  flex: 0 0 100%;
+  min-width: 0;
   opacity: 0.4;
   transition: opacity 0.3s ease;
 }
@@ -240,6 +244,8 @@
 .c-slide img {
   display: block;
   pointer-events: none;
+  width: 100%;
+  height: auto;
 }
 
 .c-slide img:hover {
