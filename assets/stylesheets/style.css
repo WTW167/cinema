@@ -201,7 +201,6 @@
 }
 
 .p-mainSlider {
-  width: 100%;
   overflow: hidden;  
   user-select: none;
   cursor: grab;
@@ -1323,18 +1322,18 @@
   }
 
   .p-scheduleBox {
-    padding: 16px;
+    padding: 20px;
     width: 100%;
   }
 
   .p-scheduleBox__purchase {
     margin-left: auto;
-    font-size: 18px;
+    font-size: 13px;
     min-width: 0;
   }
 
   .p-scheduleBox__start{
-    font-size:18px;
+    font-size: 15px;
     margin-right: 5px;
   }
 
